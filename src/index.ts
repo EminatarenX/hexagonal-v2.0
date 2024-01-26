@@ -1,6 +1,6 @@
 import express from 'express'
-import ProductRouter from './product/infraestructure/controllers/ProductController'
-import UserRouter from './user/infraestructure/controllers/userController.'
+import ProductRouter from './product/infraestructure/ProductRouter'
+import UserRouter from './user/infraestructure/UserRoutes'
 const app = express()
 app.disable('x-powered-by')
 const port = process.env.PORT || 4000
