@@ -5,6 +5,11 @@ export class User {
         public password: string,
         public id?: string,
         public createdAt?: Date,
-        public updatedAt?: Date
+        public updatedAt?: Date,
     ){}
+
+    update(name: string) {
+        this.name = name;
+    }
+    
 }

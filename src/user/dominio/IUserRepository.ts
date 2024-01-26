@@ -1,6 +1,8 @@
-import { User } from "../../../domain/user/user";
+import { User } from "./user";
 
 export interface IUserRepository {
     create(user: User): Promise<User>;
+    update(user: User): Promise<User>;
+    findById(id: string): Promise<User | null>;
     findByEmail(email: string): Promise<User | null>;
 }
