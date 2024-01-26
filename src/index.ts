@@ -9,6 +9,10 @@ app.use(express.json())
 app.use('/api/products', ProductRouter)
 app.use('/api/users', UserRouter)
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log('running on port ' + port)
 })
+
+export {
+    server
+}
