@@ -3,6 +3,7 @@ import {
     createUserController,
     updateUserController,
     deleteUserController,
+    findAllUserController
 } from './dependencies'
 
 const UserRouter = Router()
@@ -12,7 +13,6 @@ UserRouter.post(
     createUserController.run.bind(createUserController)
 )
 
-// soon find by id, find all, update, delete
 UserRouter.put(
     '/:id',
     updateUserController.run.bind(updateUserController)
@@ -21,6 +21,11 @@ UserRouter.put(
 UserRouter.delete(
     '/:id', 
     deleteUserController.run.bind(deleteUserController)
+)
+
+UserRouter.get(
+    '/',
+    findAllUserController.run.bind(findAllUserController)
 )
 
 export default UserRouter;
