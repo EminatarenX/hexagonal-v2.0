@@ -108,4 +108,6 @@ export class UserRepositoryPrisma implements IUserRepository {
             user.updatedAt
         ));
     }
+
+    
 }

@@ -3,7 +3,8 @@ import {
     createUserController,
     updateUserController,
     deleteUserController,
-    findAllUserController
+    findAllUserController,
+    authUserController
 } from './dependencies'
 
 const UserRouter = Router()
@@ -26,6 +27,11 @@ UserRouter.delete(
 UserRouter.get(
     '/',
     findAllUserController.run.bind(findAllUserController)
+)
+
+UserRouter.post(
+    '/auth',
+    authUserController.run.bind(authUserController)
 )
 
 export default UserRouter;
