@@ -1,7 +1,8 @@
 import express from 'express'
 import ProductRouter from './product/infraestructure/ProductRouter'
 import UserRouter from './user/infraestructure/UserRoutes'
-import { cors } from './cors/dependencies'
+import { cors } from './config/cors/dependencies'
+import { print } from './config/signale/Signale'
 
 const app = express()
 app.disable('x-powered-by')
@@ -15,7 +16,7 @@ app.use(express.json())
 app.use('/api/products', ProductRouter)
 app.use('/api/users', UserRouter)
 // Server
-export const server = app.listen(port, () => console.log('🚀 Server Deployed ' + port))
+export const server = app.listen(port, () => print.start(port))
 // Socket
 import { socketHandler } from './socket/infraestructure/Dependencies';
 socketHandler.connect()

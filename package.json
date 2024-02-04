@@ -15,9 +15,11 @@
   "dependencies": {
     "@prisma/client": "5.8.1",
     "@types/bcrypt": "^5.0.2",
+    "@types/signale": "^1.4.7",
     "bcrypt": "^5.1.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
+    "signale": "^1.4.0",
     "socket.io": "^4.7.4"
   },
   "devDependencies": {
