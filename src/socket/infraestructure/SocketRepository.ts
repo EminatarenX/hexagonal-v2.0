@@ -1,11 +1,20 @@
 import { ISocketRepository } from "../domain/ISocketRepository";
-import { Server, Socket } from "socket.io";
+import { Server } from "socket.io";
 
 export class SocketRepository implements ISocketRepository {
-    constructor(private readonly io: Server){}
+    private io: Server;
+    constructor(private readonly server: any, private readonly frontendUrl: string) {
+        this.io = new Server( this.server, {
+            cors: {
+                origin: this.frontendUrl,
+            },
+            pingTimeout: 60000,
+        })
+    }
+
     connect(): void {
         this.io.on('connection', (socket) => {
-            console.log('new connection')
+            console.log({user_connected: socket.id})
             socket.on('disconnect', () => {
                 console.log('user disconnected')
             })
