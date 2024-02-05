@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "tsnd --respawn src/index.ts",
+    "dev": "tsnd --respawn --clear src/index.ts",
     "sonar": "sonar-scanner",
     "test": "jest"
   },

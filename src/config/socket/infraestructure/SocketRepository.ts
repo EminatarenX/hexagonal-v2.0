@@ -3,7 +3,7 @@ import { Server } from "socket.io";
 
 export class SocketRepository implements ISocketRepository {
     private io: Server;
-    constructor(private readonly server: any, private readonly frontendUrl: string) {
+    constructor(private readonly server: Express.Application, private readonly frontendUrl: string) {
         this.io = new Server( this.server, {
             cors: {
                 origin: this.frontendUrl,

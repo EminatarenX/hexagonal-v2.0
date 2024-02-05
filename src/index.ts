@@ -18,5 +18,5 @@ app.use('/api/users', UserRouter)
 // Server
 export const server = app.listen(port, () => print.start(port))
 // Socket
-import { socketHandler } from './socket/infraestructure/Dependencies';
+import { socketHandler } from './config/socket/infraestructure/Dependencies';
 socketHandler.connect()
